@@ -31,3 +31,5 @@ C:\Users\denni\OneDrive\Documents\Fooli\obj\Debug\net7.0\refint\Fooli.dll
 C:\Users\denni\OneDrive\Documents\Fooli\obj\Debug\net7.0\Fooli.pdb
 C:\Users\denni\OneDrive\Documents\Fooli\obj\Debug\net7.0\Fooli.genruntimeconfig.cache
 C:\Users\denni\OneDrive\Documents\Fooli\obj\Debug\net7.0\ref\Fooli.dll
+C:\Users\denni\OneDrive\Documents\Fooli\bin\Debug\net7.0\DotNetEnv.dll
+C:\Users\denni\OneDrive\Documents\Fooli\bin\Debug\net7.0\Sprache.dll

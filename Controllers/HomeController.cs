@@ -1,6 +1,8 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Fooli.Models;
+using DotNetEnv;
+
 
 namespace Fooli.Controllers;
 
@@ -15,16 +17,11 @@ public class HomeController : Controller
 
   public IActionResult Index()
   {
-    var googleMapsApiKey = Environment.GetEnvironmentVariable("GoogleMapsApiKey");
+    DotNetEnv.Env.Load(); // Load the environment variables from the .env file
 
-    // Create an instance of the List model and populate other properties
-    var list = new List
-    {
-    };
-
-    // Pass the model and the API key to the view
-    ViewBag.GoogleMapsApiKey = googleMapsApiKey;
-    return View(list);
+    var googleMapsApiKey = DotNetEnv.Env.GetString("GoogleMapsApiKey");
+    ViewData["GoogleMapsApiKey"] = googleMapsApiKey;
+    return View();
   }
 
   public IActionResult Privacy()
