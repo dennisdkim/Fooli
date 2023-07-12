@@ -1,18 +1,31 @@
-﻿@{
+﻿@* @model Fooli.Models.List *@
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="container">
-    <div class="left-panel">
-        <h2>@Model.Title</h2>
-        <ul>
-            @foreach (var item in Model.Items)
-            {
-                <li>@item.LocationName</li>
-            }
-        </ul>
-    </div>
     <div class="right-panel">
-        <div id="map"></div>
+        <div id="map" style="width: 100%; height: 400px;"></div>
     </div>
 </div>
+
+<!-- Include Google Maps JavaScript API -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDMO3xJbboGOs66PDm9mTQEljGjWlPr_yM&callback=initMap" async defer></script>
+
+
+<script>
+    function initMap() {
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+            center: { lat: 49.285129, lng: -122.828468 },
+            zoom: 12
+        });
+        var markerPosition = { lat: 49.285129, lng: -122.828468 };
+        var marker = new google.maps.Marker({
+            position: markerPosition,
+            map: map,
+            title: 'Marker Title' // Optional: Set a title for the marker
+        });
+    }
+</script>
